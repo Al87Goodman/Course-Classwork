@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<!-- 	<meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Halloween Movie Database</title>
+	
+	<!-- Include: Dynamic Multi-Select Dropdowns -->
+	<link rel="stylesheet" type="text/css" href="/static/fSelect/fSelect.css">
+	<script src="/static/fSelect/fSelect.js"></script>
+
+	<!-- Include Bootstrap & jquery -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">	
+	<link rel="stylesheet" href="/static/css/font-awesome/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+	<!-- Include Created Files -->
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/headerbar.css">
+	{{#each jsscripts}}
+	<script src="/static/js/{{this}}"></script>
+	{{/each}}
+	
+	
+	</head>
+<body>
+ <!-- REFERENCE: COLT STEELE's Web Dev Bootcamp -->
+	<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+		    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapseBar" aria-expanded="false">
+        		<span class="sr-only">Toggle navigation</span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+      		</button>	
+      		<a href="/" class="navbar-brand">hmdb</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapseBar">
+			<ul class="nav navbar-nav headers">
+				<li class="nav-item"><a href="/devMovie">Developer-Movie</a></li>
+				<li class="nav-item"><a href="/devUsers">Developer-Users</a></li>
+				<li class="nav-item"><a href="/movie">Movie Search</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="nav-item"><a href="/about">About/Contact</a></li>
+				{{#if isAuthenticated}}
+				<li class="nav-item"><a href="/logout">Logout</a></li>
+				<li class="nav-item"><a href="/profile">Profile</a></li>
+				{{else}}
+				<li class="nav-item"><a href="/login">Login/Register</a></li>
+				{{/if}}
+			</ul>
+	    </div>
+	</div>
+	</nav>
+
+	{{{body}}}
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
