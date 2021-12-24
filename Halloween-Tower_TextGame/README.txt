@@ -1,3 +1,4 @@
+*Early Coursework
 # Halloween Tower Text-Based Adventure Game
 
 How to run: 
