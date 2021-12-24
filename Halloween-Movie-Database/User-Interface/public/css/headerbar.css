@@ -1,0 +1,40 @@
+/*
+  REFERENCE: 
+  	1. Youtube Channel: Code Explained - Customize Bootstrap 4 NAVBAR|CSS only
+  		link: https://www.youtube.com/watch?v=3Yc7TVZo3h0&feature=youtu.be;
+*/
+
+
+.navbar{
+	background-color:#333442;
+}
+
+.navbar .container{
+	width: auto;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right:0;
+	margin-left:0;
+}
+
+.navbar .container .navbar-right{
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right:0;
+	margin-left:0;
+}
+
+.navbar .navbar-brand{
+	font-family: "Brush Script MT", cursive;
+	color: #ff4f38;
+	font-weight: bolder;
+	font-size: 2.0em;
+}
+
+
+
+.navbar .nav-item a{
+	color:white !important;
+	font-family: cursive;
+}
+

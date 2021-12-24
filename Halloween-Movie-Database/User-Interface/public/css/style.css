@@ -1,0 +1,79 @@
+/*
+ * Style Sheet for Halloween Movie Database 
+ * Last Modified: 29 November 2018
+ *
+ * 
+*/
+
+
+.scroll{
+  height:300px;
+  width:auto;
+  font:12px;
+  overflow:scroll;
+}
+
+a.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+} 
+
+
+.faveTable th{
+  color: red;
+}
+
+.watchTable th{
+  color: blue;
+}
+
+.userTable{
+  margin: 0 0 2em 0;
+}
+
+.userTable th{
+  padding: 0 0.25em 0.25em 0.25em;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+/*table {
+  margin: 0 0 2em 0;
+  width: 100%;
+  border-color:black;
+}
+
+table tr {
+  border:solid 5px;
+  border-left: 0;
+  border-right: 0;
+  border-color: rgba(255,255,255,0.2);
+
+}
+
+table td {
+  padding: 0.25em 0.25em;
+
+}
+
+table th {
+  font-size: 0.9em;
+  font-weight: 700;
+  padding: 0 0.25em 0.25em 0.25em;
+  text-align: left;
+  color: #000;
+}
+
+
+table tbody tr: nth-child(2n+1) {
+  background-color: rgba(0,0,0,0.075);
+}*/
+
+

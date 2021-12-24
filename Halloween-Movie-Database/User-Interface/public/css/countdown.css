@@ -1,0 +1,37 @@
+
+
+
+
+.countdownContainer{
+	text-align: center;
+/*	background: #E0E0E0;*/
+	border: 1px solid #999;
+	padding: 10px;
+	box-shadow: 0 0 5px 3px #ff4f38;
+}
+
+/*.countdownDiv{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translateX(-50%) translateY(-50%);
+
+}*/
+
+button{
+	background-color:#ff4f38;
+}
+
+
+th{
+	text-align: center;
+}
+
+.infoHeaders{
+	text-align-last: center;
+}
+
+.info{
+	font-size: 50px;
+	color:#ff4f38;
+}
