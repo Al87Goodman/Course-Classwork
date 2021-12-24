@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3973696386362154391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3973696386362154378}
+  - component: {fileID: 3973696386362154388}
+  m_Layer: 0
+  m_Name: PlayerPartyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3973696386362154378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3973696386362154391}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 623.75885, y: 210.1348, z: -21.993488}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3973696386362154388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3973696386362154391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ad39c9433fb5643b0c939ba03d0278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spirits:
+  - {fileID: 7771030532821337690, guid: 98264767ecda80749843b2ab78e4cd40, type: 3}
+  - {fileID: 6956398695409855182, guid: 797f29ea67e296a42822ee2beb4bd92f, type: 3}
+  - {fileID: 5928995528573641308, guid: 0bafcf8228f1242439c8827c4c7f4bb2, type: 3}
+  - {fileID: 6033073037860339679, guid: 3af89fbc832816747a279045b8a3db81, type: 3}
+  - {fileID: 3134985703947559729, guid: 3196e1175ab6f3c4eafca1f65e781530, type: 3}
+  - {fileID: 2468174841034175310, guid: 45e447d67719c734ca8620b4e312dd84, type: 3}
+  - {fileID: 2705889858534554793, guid: 5e1abab0deed0634591503ad7d59c87f, type: 3}
+  - {fileID: 1274665485802098748, guid: 5ab85db71b5ef19409d55d34eadd88ca, type: 3}
+  - {fileID: 7317629020179967346, guid: d41f780b921a506408344f6f29a927c0, type: 3}
+  - {fileID: 1274665485802098748, guid: 1bf8ee8b09b06d24ea0e411115843016, type: 3}
+  playerParty: []
