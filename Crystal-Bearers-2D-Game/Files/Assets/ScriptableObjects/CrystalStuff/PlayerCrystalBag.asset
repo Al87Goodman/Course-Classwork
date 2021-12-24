@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c62c3b486c587a94fb9171ec2f2b2bff, type: 3}
+  m_Name: PlayerCrystalBag
+  m_EditorClassIdentifier: 
+  myCrystals:
+  - {fileID: 11400000, guid: a288eaed11611164bb1e17d152682165, type: 2}
+  - {fileID: 11400000, guid: fe82281c401e5414693be95fa661c47d, type: 2}
+  - {fileID: 11400000, guid: 69ffd750baafee14e857e5da33dad6b6, type: 2}
+  - {fileID: 11400000, guid: 426a76e31eddc3c4eb4e56452280af5d, type: 2}
+  - {fileID: 11400000, guid: 1f34b16c78457344d9729ab6aa079498, type: 2}
