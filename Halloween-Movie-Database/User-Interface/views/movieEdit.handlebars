@@ -1,0 +1,143 @@
+<html>
+
+
+<h2>Movie Update Page</h2>
+
+
+<h3>Update {{onemovie.title}}</h3>
+<form id="movieEdit" action="/devMovie" method="post">
+  <fieldset id="update_M">
+    <legend>Update Movie</legend>
+    Movie Title:
+    <input type="text" name="title" id="titleU" value="{{onemovie.title}}"> <br>
+
+    Year:
+    <input type="number" name="year" id="yearU" value={{onemovie.year}}> <br>
+
+    Duration:
+    <input type="number" name="duration" id="durationU" value={{onemovie.duration}}> <br>
+
+    Link:
+    <input type="text" name="link" id="linkU" value="{{onemovie.link}}"> <br>
+	
+  </fieldset>
+</form>
+
+<button onclick="updateMovie({{onemovie.id}})">Update Movie</button>
+<div><a href="/devMovie">Cancel</a> </div>
+
+<hr style="width:100%; height:2px; background-color:#520ef2;" />
+
+<h4>Remove Subgenres</h4>
+
+<form id="removeMovSubg" method="PUT" action="/removeSubg">
+  <fieldset>
+  <div class="form-group">
+    <label for="subgenre">Subgenre</label>
+        <select id='subgSelector' name="subgenre" class="subgenre" multiple="multiple"> 
+            <optgroup label="Subgenre">
+            {{#each subg}}
+            <option value={{sid}}>{{name}}</option>
+            {{/each}}
+            </optgroup>
+        </select>
+  </div>
+
+    <input type="hidden" name="mid" value={{onemovie.id}}>
+  </fieldset>
+</form> 
+  <button class="btn btn-primary" onclick="removeMovSubg({{onemovie.id}})">Remove</button>
+
+
+
+<hr style="width:100%; height:2px; background-color:#520ef2;" />
+
+<h4>Remove Character Types</h4>
+<form id="removeMovCharc" method="POST" action="/removCharc">
+  <fieldset>
+  <div class="form-group">
+    <label for="charctype">Charctype</label>
+        <select id='charcSelector' name="charctype" class="charctype" multiple="multiple"> 
+            <optgroup label="Charctype">
+            {{#each charc}}
+            <option value="{{cid}}">{{name}}</option>
+            {{/each}}
+            </optgroup>
+        </select>
+  </div>
+
+    <input type="hidden" name="mid" value={{onemovie.id}}>
+  </fieldset>
+</form> 
+  <button class="btn btn-primary" onclick="removeMovCharc({{onemovie.id}})">Remove</button>
+
+
+<hr style="width:100%; height:2px; background-color:#520ef2;" />
+
+<h3>Select the Subgenre(s) to Add</h3>
+<form id="addMovSubg" method="PUT" action="/addSubg">
+  <fieldset>
+  <div class="form-group">
+    <label for="subgenre">Subgenre</label>
+        <select id='subgAdd' name="subgenre" class="subgenre" multiple="multiple"> 
+            <optgroup label="Subgenre">
+            {{#each remainSubg}}
+            <option value={{sid}}>{{name}}</option>
+            {{/each}}
+            </optgroup>
+        </select>
+  </div>
+
+    <input type="hidden" name="mid" value={{onemovie.id}}>
+  </fieldset>
+</form> 
+  <button class="btn btn-primary" onclick="addMovSubg({{onemovie.id}})">Add Subg</button>
+
+<h3>Select the Character Type(s) to Add</h3>
+<form id="addMovCharc" method="PUT" action="/addCharc">
+  <fieldset>
+  <div class="form-group">
+    <label for="charctype">Charctype</label>
+        <select id='charcAdd' name="charctype" class="charctype" multiple="multiple"> 
+            <optgroup label="Charctype">
+            {{#each remainCharc}}
+            <option value={{cid}}>{{name}}</option>
+            {{/each}}
+            </optgroup>
+        </select>
+  </div>
+
+    <input type="hidden" name="mid" value={{onemovie.id}}>
+  </fieldset>
+</form> 
+  <button class="btn btn-primary" onclick="addMovCharc({{onemovie.id}})">Add Charc</button>
+
+
+
+<link rel="stylesheet" type="text/css" href="/static/fSelect/fSelect.css">
+<script src="/static/fSelect/fSelect.js"></script>	
+
+<script>
+(function($) {
+    $(function() {
+        $('.subgenre').fSelect();
+    });
+})(jQuery);
+</script>
+
+<script>
+(function($) {
+    $(function() {
+        $('.charctype').fSelect();
+    });
+})(jQuery);
+</script>
+
+
+
+<script type="text/javascript">
+    var ar
+
+
+</script>
+</html>

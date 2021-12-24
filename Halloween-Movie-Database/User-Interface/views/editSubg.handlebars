@@ -1,0 +1,50 @@
+<!doctype HTML>
+
+
+<h2 align="center">Subgenre Edit/Delete Page</h2>
+
+<div class="container-fluid">
+<h3>Select the Subgenre to Edit/Delete</h3>
+<table class="table table-sm table-hover">
+    <thead class="thead-light"> 
+        <th scope="col">id</th>
+        <th scope="col">Name</th> 
+        
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+    </thead> 
+    <tbody>
+        {{#each subgenre}} 
+        <tr scope="row"> 
+            <td>{{id}}</td>
+            <td>{{name}}</td> 
+
+            <td><a href="/editSubg/{{id}}">Edit</a></td>
+            <td><button onclick="deleteSubg({{id}})">Delete</button></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table>     
+
+</div>
+
+
+<div class="container-fluid">
+<form id="editSubg" action="/editSubg" method="post">
+  <fieldset id="update">
+    <legend>Update Subgenre: {{editSubg.name}}</legend>
+    Subgenre Name:
+    <input type="text" name="sname" id="nameU" value={{editSubg.name}}> <br>
+
+  </fieldset>
+</form>
+
+<button onclick="updateSubg({{editSubg.id}})">Update</button>
+<a class="button" href="/editSubg">Cancel</a>    
+
+</div>
+
+
+
+
+

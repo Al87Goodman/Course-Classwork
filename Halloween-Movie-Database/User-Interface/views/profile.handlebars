@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<div class="container"> 
+  <h2>Welcome {{user.uname}}</h2>
+  <h5>Account Created: {{user.date_created}}</h5>
+</div>
+
+
+<div class="container">
+<form id="updateUser" method="POST" action="/profile">
+  <div class="form-group">
+    <label for="uname">Username</label>
+    <input type="text" class="form-control" name="uname" id="uname" value="{{user.uname}}" required>
+  </div>
+  <div class="form-group">
+    <label for="fname">First Name</label>
+    <input type="text" class="form-control" name="fname" id="fname" value="{{user.fname}}">
+  </div>
+  <div class="form-group">
+    <label for="lname">Last Name</label>
+    <input type="text" class="form-control" name="lname" id="lname" value="{{user.lname}}">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" name="email" id="email" value="{{user.email}}" required>
+  </div>
+
+</form>	
+  <button class="btn btn-primary" onclick="updateUser({{user.u_id}})">Update</button>
+
+</div>
+
+
+
+<hr style="width:100%; height:2px; background-color:#520ef2;" />
+
+<div class="container-fluid">
+  <h4>Watchlist:</h4>
+  <div class="scroll">
+  <table class="tableWatch table table-sm table-hover">
+      <thead class="thead-light"> 
+          <th scope="col">Movie Title</th> 
+          <th scope="col">Date Added</th>
+          <th scope="col">Remove</th> 
+      </thead> 
+      <tbody>
+          {{#each watch}} 
+          <tr scope="row"> 
+              <td>{{title}}</td> 
+              <td>{{date_added}}</td> 
+              <td><button onclick="removeWatchlist({{mid}})">Remove</button></td>
+          </tr> 
+          {{/each}} 
+      </tbody> 
+  </table> 
+  </div>  
+</div>
+
+
+<div class="container-fluid">
+  <h4>Favorites:</h4>
+  <div class="scroll">
+  <table class="tableFave table table-sm table-hover">
+      <thead class="thead-light"> 
+          <th scope="col">Movie Title</th> 
+          <th scope="col">Date Added</th> 
+          <th scope="col">Remove</th>
+      </thead> 
+      <tbody>
+          {{#each fave}} 
+          <tr scope="row"> 
+              <td>{{title}}</td> 
+              <td>{{date_added}}</td> 
+              <td><button onclick="removeFavorites({{mid}})">Remove</button></td>
+          </tr> 
+          {{/each}} 
+      </tbody> 
+  </table> 
+  </div>  
+
+</div>
+
+
+
+
+</html>

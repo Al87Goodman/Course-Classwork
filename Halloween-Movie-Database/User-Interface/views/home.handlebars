@@ -1,0 +1,61 @@
+<html>
+	<link rel="stylesheet" type="text/css" href="/static/css/countdown.css">
+
+<div class="container">
+	<h1>HALLOWEEN MOVIE DATABASE</h1>	
+	<h4>Welcome to the Halloween Movie Database - OSU CS 340 Project</h4>
+	<br>
+	  <div id="menu">
+	    <h4>Website Page Descriptions </h4>
+
+	    <ul>
+		<li>Developer-Movie: For the Developer/Admin to Make Changes (Add, Delete, Update) to the Movies in the Database & Add, Delete, Update the Character Types and Subgenres</li>
+		<li>Developer-Users: For the Developer/Admin to be able to manage the Users for the Halloween Movie Database. </li>
+		<li>Movie Search: User Interface to Search the Database for certain Movies and get Movie Descriptions (click Info)</li>
+		<li>Login/Create Account: For Users to Login and/or Create an Account. </li>
+		<ul>
+		  <li>Profile: Can edit/manage personal information, Watchlist, and Favorites.
+		  <li>Create Account: Used to set up a new Account.
+		</ul>
+		<li>*Note 1: Currently No Password Reset - Still have to figure out a safe way to do this.</li>
+		<li>*Note 2: Note Attribute has been removed from Favorites. Would be better placed as just a separate table.</li>
+	    </ul>
+
+	  </div>
+</div>
+
+
+  <br>
+
+
+	<div class="countdownDiv container">
+		<h2>Halloween Countdown</h2>
+		<button id="utc">UTC</button>
+		<button id="local">LOCAL</button>
+			
+
+	<table class="countdownContainer">
+		<tr>
+			<td colspan="4" class="info">Days Until Halloween</td>
+		</tr>
+		<tr>
+			<td colspan="4">( <span id="timezone"></span> )</td>
+		</tr>
+		<tr class="info">
+			<td id="days"></td>
+			<td id="hours"></td>
+			<td id="minutes"></td>
+			<td id="seconds"></td>
+		</tr>
+		<tr class="infoHeaders">
+			<th>Days</th>
+			<th>Hours</th>
+			<th>Minutes</th>
+			<th>Seconds</th>
+		</tr>
+	</table>
+	</div>
+
+	<script type="text/javascript" src="static/js/countdown.js"></script>
+
+</html>

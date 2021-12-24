@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+	#development{
+		border-style: dashed;
+		border-color: #ff4f38;
+    width: 40%;
+	}
+
+  button.btn-default{
+    color:#520ef2;
+  }
+</style>
+
+ <form hidden id='status' action='' method=''>
+    <label> List Status:</label>
+    <input hidden id='statusWatch' type='text' name='statusWatch' value="{{statusWatch}}">  
+    <input hidden  id='statusFave' type='text' name='statusFave' value="{{statusFave}}">   
+</form>
+
+
+<div><a href="/movie" type="button" class="btn btn-default btn-sm">
+  <i class="fa fa-arrow-left"></i> Back to Movie Search
+  </a>
+  </div>
+
+ <div class="container">
+
+  <h2>{{movie.title}}</h2>
+  <h5> Character Types: {{#each charc}} "{{name}}" {{/each}}</h5>
+  <h5>Subgenres:  {{#each subg}} "{{name}}" {{/each}}</h5>
+  <h5>Year: {{movie.year}}</h5>
+  <h5>Duration: {{movie.duration}} minutes</h5> 
+  <span>Watchlist: </span>
+
+<button type="button" disabled class="btn btn-default" id="addWatchBtnCheck" onclick="addWatch({{movie.id}})" >Add
+    <i class="fa fa-check fa-lg" aria-hidden="false" value="add"></i>
+  </button>
+<button type="button" disabled class="btn btn-default" id="removeWatchBtnCheck" onclick="removeWatch({{movie.id}})" >Remove
+    <i class="fa fa-times fa-lg" aria-hidden="false" value="remove"></i>
+  </button>
+
+
+  <br>
+  <span>Favorites: </span>
+  <button type="button" disabled class="btn btn-default" id="addFaveBtnHeart"  value="Add to Favorites" onclick="addFave({{movie.id}})">Add
+    <i class="fa fa-heart fa-lg" aria-hidden="False"></i>
+  </button> 
+
+  <button type="button" disabled class="btn btn-default" id="removeFaveBtnHeart" onclick="removeFave({{movie.id}})" value="Remove from Favorites">Remove
+    <i class="fa fa-heart-o fa-lg" aria-hidden="False"></i>
+  </button> 
+</div>
+
+
+<br>
+
+
+
+<!-- <input class ="btn" type="button" id="addWatchBtn" value="Add to Watchlist" onclick="addWatch({{movie.id}})" disabled/> 
+<input class="btn" type="button" id="removeWatchBtn" onclick="removeWatch({{movie.id}})" value="Remove from Watchlist" disabled>
+
+<br>
+<br>
+
+<input class ="btn" type="button" id="addFaveBtn" value="Add to Favorites" onclick="addFave({{movie.id}})" disabled/> 
+<input class="btn" type="button" id="removeFaveBtn" onclick="removeFave({{movie.id}})" value="Remove from Favorites" disabled> -->
+
+
+<br>
+
+
+
+<br>
+<div class="container-fluid">
+  <div id="development"> 
+    <span>FUTURE DEVELOPMENT SECTION: </span> <br>
+    <ul>
+      <li>IMDB Link: {{movie.link}}</li>
+      <li>User Rating:</li>
+      <li>Quick Description:</li>
+      <li>Editor's Note / Recommended Audience:</li>
+      <li>Personal User Comments/Note:</li>
+    </ul>
+  </div>  
+
+</div>
+
+
+
+
+
+</html>

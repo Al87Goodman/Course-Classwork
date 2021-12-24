@@ -1,0 +1,52 @@
+<!doctype HTML>
+
+
+<h2 align="center">Character Edit/Delete Page</h2>
+
+<div class="container-fluid">
+<h3 >Select the Charcacter-Type to Edit/Delete</h3>
+<table class="table table-sm table-hover">
+    <thead class="thead-light"> 
+        <th scope="col">id</th>
+        <th scope="col">Name</th> 
+        
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+    </thead> 
+    <tbody>
+        {{#each charctype}} 
+        <tr scope="row"> 
+            <td>{{id}}</td>
+            <td>{{name}}</td> 
+
+            <td><a href="/editCharc/{{id}}">Edit</a></td>
+            <td><button onclick="deleteCharc({{id}})">Delete</button></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table>     
+
+
+</div>
+
+
+<div class="container-fluid">
+<form id="editCharc" action="/editCharc" method="post">
+  <fieldset id="update">
+    <legend>Update Charctype: {{editCharc.name}} </legend>
+    Character Name:
+    <input type="text" name="cname" id="nameU" value={{editCharc.name}}> <br>
+
+  </fieldset>
+</form>
+
+
+<button onclick="updateCharc({{editCharc.id}})">Update</button>
+<a class="button" href="/editCharc">Cancel</a>    
+
+</div>
+
+
+
+
+

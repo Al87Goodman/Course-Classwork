@@ -1,0 +1,55 @@
+<html>
+
+
+
+<h2 align="center">{{title}}</h2>
+
+<span>Username: must be between 4-25 chars long</span> <br>
+<span>Password: must be at least 8 chars long and must include one of each: lower case, upper case, number, and special char </span> <br>
+
+
+{{#if errors}}
+	{{#each errors}}
+		<div class="alert alert-danger">
+		{{this.msg}}
+		</div>
+	{{/each}}
+{{/if}}
+
+
+{{#if checkUsername}}
+<div class="alert alert-danger">{{checkUsername}}</div> 
+{{/if}}
+
+{{#if checkEmail}}
+<div class="alert alert-danger">{{checkEmail}}</div> 
+{{/if}}
+
+<div class="container">
+<form method="POST" action="/register">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" name="username" id="uname" placeholder="Username" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" name="password" id="pword" placeholder="Password" required>
+  </div>
+  <div class="form-group">
+    <label for="passwordMatch">Re-Enter Password</label>
+    <input type="password" class="form-control" name="passwordMatch" id="pwordMatch" placeholder="Password" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>	
+
+</div>
+
+
+
+
+</html>

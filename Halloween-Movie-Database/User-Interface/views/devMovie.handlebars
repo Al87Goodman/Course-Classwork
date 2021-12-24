@@ -1,0 +1,154 @@
+<html>
+
+
+<h2 align="center">DEVELOPER/ADMIN - Movie</h2>
+
+<div class="container-fluid">
+    <h4>Add New Movie:</h4>
+    <form id="addmovie" action="/devMovie" method="post">
+        Movie Title: <input type="text" name="title" required><br>
+        Year: <input type="number" name="year"><br>
+        Movie Duration: <input type="number" name="duration"><br>
+        Link: <input type="text" name="link"><br>
+        Sub-Genre: <select name="subgenre" class="subgenre" multiple="multiple"> 
+            <optgroup label="Subgenre">
+            {{#each subgenre}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+            </optgroup>
+        </select><br>
+
+        Character-Type: <select name="charctype" class="charctype" multiple="multiple"> 
+            <optgroup label="Charctype">
+            {{#each charctype}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+            </optgroup>
+        </select><br>
+
+        <input type="submit" value="Submit">
+     </form>    
+</div>
+
+<hr style="width:100%; height:2px; background-color:#520ef2;" />
+
+<div class="container-fluid">
+    <h4>Add New Subgenre</h4>
+    <form id="addSubg" action="/devMovie/addSubg" method="post">
+      Sub-Genre: <input type="text" name="addSubg" required> <br>
+      <input type="submit" value="addSubg">
+    </form>
+
+    <h4>Add New Character Type</h4>
+    <form id="addCharc" action="/devMovie/addCharc" method="post">
+      Character-Type: <input type="text" name="addCharc" required> <br>
+      <input type="submit" value="addCharc">
+    </form>    
+
+    <h4>Edit/Delete Subgenre</h4>
+
+    <a class="button" href="/editSubg">Edit/Delete Subgenre</a> <br>
+    <a class ="button" href="/editCharc">Edit/Delete Charctype</a> <br>
+
+</div>
+
+<hr style="width:100%; height:2px; background-color:#520ef2;" />
+
+<div class="container-fluid">
+    <h4> Filter/Search Movies </h4>
+    <a href="/devMovie" class="button" role="button">Reset Filter</a>
+    <!-- FILTER MOVIES GO HERE -->
+    <form id="filter_movieS" action="/devMovie/filterSubg" method="post">
+        <label> Filter by Subgenre </label>
+        <select id='filter_charc' name="subgenre" class="subgenre" multiple="multiple"> 
+            <optgroup label="Subgenre">
+            {{#each subgenre}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+            </optgroup>
+        </select><br>
+    <!--     <input type="button" value="Filter" onclick="filterByCharc()"> -->
+        <input type="submit" value="filterSubg">
+     </form>
+
+    <form id="filter_movieC" action="/devMovie/filterCharc" method="post">
+        <label> Filter by Character-Type </label>
+        <select id='filter_charc' name="charctype" class="charctype" multiple="multiple"> 
+            <optgroup label="Charctype">
+            {{#each charctype}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+            </optgroup>
+        </select><br>
+    <!--     <input type="button" value="Filter" onclick="filterByCharc()"> -->
+        <input type="submit" value="filterCharc">
+     </form>
+
+     <form id='search_movie' action='' method=''>
+        <label> Search Movie by Title:</label>
+        <input id='search_title' type='text' name='search_title' value=''>
+    </form>
+         <input required type="button" value="Search" onclick="searchMovieByTitle()">    
+</div>
+
+     
+<hr style="width:100%; height:2px; background-color:#520ef2;" />
+
+<div class="container-fluid">
+    <h4>Search Results:</h4>
+    <table class="table table-sm table-hover">
+        <thead class="thead-light"> 
+            <th scope="col">Movie Title</th> 
+            <th scope="col">Year</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Link</th>
+            <th scope="col">INFO(ViewOnly)</th>
+
+            <th scope="col">Delete</th>
+            <th scope="col">Edit</th>
+        </thead> 
+        <tbody>
+            {{#each movie}} 
+            <tr scope="row"> 
+                <td>{{title}}</td> 
+                <td>{{year}}</td> 
+                <td>{{duration}}</td>
+                <td>{{link}}</td>
+
+                <td><a href="/infoMovie/{{id}}">INFO</a></td>
+                <td><button onclick="deleteMovie({{id}})">Delete</button></td>
+                <td><a href="/devMovie/{{id}}">Edit</a></td>
+            </tr> 
+            {{/each}} 
+        </tbody> 
+    </table>     
+</div>
+
+
+<!-- The following are for the multiselect dropdowns -->
+<link rel="stylesheet" type="text/css" href="/static/fSelect/fSelect.css">
+<script src="/static/fSelect/fSelect.js"></script>	
+
+<script>
+(function($) {
+    $(function() {
+        $('.subgenre').fSelect();
+    });
+})(jQuery);
+</script>
+
+<script>
+(function($) {
+    $(function() {
+        $('.charctype').fSelect();
+    });
+})(jQuery);
+</script>
+
+	
+</html>
+
+
+
+
+

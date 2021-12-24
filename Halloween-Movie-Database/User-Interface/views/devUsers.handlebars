@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+<h1 align="center">DEVELOPER/ADMIN - Users</h1>
+
+<div class="container">
+<span>Username: must be between 4-25 chars long</span> <br>
+<span>Password: must be at least 8 chars long and must include one of each: lower case, upper case, number, and special char </span> <br>
+
+
+{{#if errors}}
+  {{#each errors}}
+    <div class="alert alert-danger">
+    {{this.msg}}
+    </div>
+  {{/each}}
+{{/if}}
+
+{{#if checkUsername}}
+<div class="alert alert-danger">{{checkUsername}}</div> 
+{{/if}}
+
+{{#if checkEmail}}
+<div class="alert alert-danger">{{checkEmail}}</div> 
+{{/if}}  
+
+<form method="POST" action="/devUsers">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input required type="text" class="form-control" name="username" id="uname" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <label for="fname">First Name</label>
+    <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name">
+  </div>
+  <div class="form-group">
+    <label for="lname">Last Name</label>
+    <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input required type="email" class="form-control" name="email" id="email" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input required type="password" class="form-control" name="password" id="pword" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="passwordMatch">Re-Enter Password</label>
+    <input required type="password" class="form-control" name="passwordMatch" id="pwordMatch" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-primary">Add User</button>
+
+</form>   
+
+</div>
+
+  <hr style="width:100%; height:2px; background-color:#520ef2;" />
+
+<div class="container">
+  <h4>Search By Username</h4>
+  <h5>Possible Additional Searches Later..</h5>
+  <a href="/devUsers" class="button" role="button">Reset Filter</a>
+  <form id='searchUsers' action='' method=''>
+
+    <label>User Name</label>
+    <input id='unameSearch' type='text' name='uname'> <br>
+
+  <form>
+    <input type="button" value="FilterUsers" onclick="searchUsername()">
+  <br>  
+</div>
+
+  <br>	  
+  <hr style="width:100%; height:2px; background-color:#520ef2;" />
+
+<div class="container-fluid">
+  <h4>List of Users</h4>
+
+  <table class="table table-sm table-hover">
+    <thead class="thead-light">
+      <th scope="col">ID</th>
+      <th scope="col">User Name</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Delete</th>
+      <th scope="col">Edit</th>
+    </thead>
+    <tbody>
+      {{#each users}}
+      <tr scope="row">
+        <td>{{id}}</td>
+        <td>{{uname}}</td>
+        <td>{{fname}}</td>
+        <td>{{lname}}</td>
+        <td>{{email}}</td>
+
+        <td><button onclick="deleteUser({{id}})">Delete</button></td>
+        <td><a href="/devUsers/{{id}}">Edit</a></td>
+      </tr>
+      {{/each}}
+    </tbody>  
+
+</div>
+
+
+</html>
