@@ -1,1 +1,12 @@
+This project encrypts and decrypts plaintext into ciphertext using a one-time pad-like system with a pseudorandom generated key that has user defined length. This application uses two background programs (one for encryption and one for decryption) that are accessed using network sockets. Two more programs use the aforementioned two background “daemon-like” programs to perform work such as validating message characters before sending to the server and if everything is valid, displays the message to stdout (in the terminal). The current setup allows for a maximum connection of 5 concurrent sockets for 5 separate encryptions at once (can be increased/decreased by changing 1 pre-processor directive). 
 
+The following programs were created along with their functions: 
+    1. Key Generation: Takes in a user desired key length and the programs produces a pseudorandom key.
+    2. Encryption Background Program: Takes in a plaintext message and the key from the client. If the client is allowed to communicate, then the program will encrypt the message and send it back to the client. Uses a one-time pad encryption.
+    3. Encryption Program: Takes in a plaintext message, key and a port number to communicate with a server. If communication is allowed, the server will return a ciphertext using a one-time pad encryption. Before sending plaintext and key to the server, this program will verify the message only contains valid message characters. If run to completion, then the returned message will output to stdout.
+    4. Decryption Background Program: Takes in an encrypted message and the key from the client. If the client is allowed to communicate, then the program will decrypt the message and send it back to the client.
+    5. Decryption: Takes in a ciphertext, key and a port number to communicate with a server. If communication is allowed, the server will return original message using one-time pad decryption. Before sending ciphertext and key to the server, this program will verify the message only contains valid message characters. If run to completion, then the returned message will output to stdout. 
+    6. Utility Program: functions for all the encryption/decryption communication on both the server and client programs such as message integrity through the sockets and allocating memory for receiving messages
+    7. Compilation Script (written in Bash)
+    
+  
