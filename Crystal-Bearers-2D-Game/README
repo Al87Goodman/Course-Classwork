@@ -1,1 +1,41 @@
+# Capstone Project
+
+# Crystal Bearers: Rebel Youth
+
+
+-- Instructions & Manuals --
+
+The game can be started up in two ways. Either a) run the executable included in this
+submission from a Windows 10 operating system (running it from in the folder it is, as it needs
+some of those surrounding files to run), or b) the files submitted can be loaded into Unity and
+the game run from there (as well as allowing the project as a whole to be viewed). If method b is
+used be sure to start from the “Start Menu” scene.
+
+Once started, you will see the Title Screen. From here, either choose (click on) New Game,
+which will take you to the Rose City (named BasicTown in files) or you can choose
+Load/Continue and select a previously saved game.
+
+Playing the Game:
+You can control the Player character and interact with various pieces of the town.
+Player Controls
+- Arrow Keys/W-S-A-D - Move Player
+- Space - Interact With Signs and NPCs
+- “b” key- Toggle All Inventory Displays On/Off
+- Left Click Bag Icon - Toggle specific Inventory Display On/Off
+- Left Click + Shift Bag Icon - Dequips Bag and can be placed into Inventory Slot
+- Right Click - Use item Menu (Use, Toss, Cancel)
+- Left Click - Picks Up Item
+- Left Click, Move Mouse Over World, Left Click - Discards/Removes Item from Inventory
+- Left Click, Move Item Over Same Item Type, Left Click - Stack Items in Inventory
+- “esc” key - Pause Menu
+
+Demo/Development/Tester “HotKey” Controls
+- “h” key - Add Health Potion to the Inventory
+- “m” key - Add Magic Potion to the Inventory
+- “p” key - Add Poison Potion to the Inventory
+- “x” key - Add Crystal to Crystal Bag
+
+
+
+
 
